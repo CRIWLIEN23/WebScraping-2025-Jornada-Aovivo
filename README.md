@@ -1,4 +1,4 @@
-# Web Scraping Mercado livre case Sansung
+# Web Scraping Mercado livre case Samsung
 
 <p align="center">
   <a href="https://suajornadadedados.com.br/"><img src="pic/logo.png" alt="Jornada de Dados"></a>
