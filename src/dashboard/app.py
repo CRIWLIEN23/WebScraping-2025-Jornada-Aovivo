@@ -7,7 +7,7 @@ import sqlite3
 conn = sqlite3.connect('data/mercadolivre.db')
 
 # Carregar os dados da tabela 'notebooks' em um DataFrame pandas
-df = pd.read_sql_query("SELECT * FROM notebooks", conn)
+df = pd.read_sql_query("SELECT * FROM notebook", conn)
 
 # Fechar a conexão com o banco de dados
 conn.close()
@@ -28,7 +28,7 @@ unique_brands = df['brand'].nunique()
 col2.metric(label="🏷️ Marcas Únicas", value=unique_brands)
 
 # KPI 3: Preço médio novo (em reais)
-average_new_price = df['new_price'].mean()
+average_new_price = df['new_money'].mean()
 col3.metric(label="💰 Preço Médio (R$)", value=f"{average_new_price:.2f}")
 
 # Marcas mais frequentes
@@ -41,8 +41,8 @@ col2.write(top_brands)
 # Preço médio por marca
 st.subheader('💵 Preço médio por marca')
 col1, col2 = st.columns([4, 2])
-df_non_zero_prices = df[df['new_price'] > 0]
-average_price_by_brand = df_non_zero_prices.groupby('brand')['new_price'].mean().sort_values(ascending=False)
+df_non_zero_prices = df[df['new_money'] > 0]
+average_price_by_brand = df_non_zero_prices.groupby('brand')['new_money'].mean().sort_values(ascending=False)
 col1.bar_chart(average_price_by_brand)
 col2.write(average_price_by_brand)
 

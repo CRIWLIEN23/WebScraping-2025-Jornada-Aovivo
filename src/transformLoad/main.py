@@ -43,7 +43,7 @@ df = df[
 # Remover as colunas antigas de preços
 
 # Conectar ao banco de dados SQLite (ou criar um novo)
-conn = sqlite3.connect('data/mercadolivre.sql')
+conn = sqlite3.connect('data/mercadolivre.db')
 
 # Salvar o DataFrame no banco de dados SQLite
 df.to_sql('notebook', conn, if_exists='replace', index=False)
