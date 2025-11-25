@@ -12,7 +12,7 @@ df = pd.read_sql_query("SELECT * FROM notebook", conn)
 # Fechar a conexão com o banco de dados
 conn.close()
 
-# Título da aplicação
+
 st.title('📊 Pesquisa de Mercado - Notebooks no Mercado Livre')
 
 # Melhorar o layout com colunas para KPIs
