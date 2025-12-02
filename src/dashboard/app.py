@@ -4,7 +4,7 @@ import pandas as pd
 import sqlite3
 
 # Conectar ao banco de dados SQLite
-conn = sqlite3.connect('data/mercadolivre.db')
+conn = sqlite3.connect('../../data/mercadolivre.db')
 
 # Carregar os dados da tabela 'notebooks' em um DataFrame pandas
 df = pd.read_sql_query("SELECT * FROM notebook", conn)
@@ -12,7 +12,7 @@ df = pd.read_sql_query("SELECT * FROM notebook", conn)
 # Fechar a conexão com o banco de dados
 conn.close()
 
-# Título da aplicação
+
 st.title('📊 Pesquisa de Mercado - Notebooks no Mercado Livre')
 
 # Melhorar o layout com colunas para KPIs
